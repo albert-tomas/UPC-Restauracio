@@ -15,8 +15,5 @@ Aquest projecte integra tecnologia avançada i eines digitals per millorar l'exp
 
 Participant: Xavi Moreno
 
-With the "New" button in the PATH editor, add C:\Program Files\Git\bin\ and C:\Program Files\Git\cmd\ to the end of the list.
- git config --global user.name "albert-tomas"
-PS C:\Users\Administrador\Desktop\UPC_Restauracio> git config --global user.email alberttomas135@gmail.com
 
 HOLAAAAAAAAAAA

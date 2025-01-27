@@ -15,5 +15,6 @@ Aquest projecte integra tecnologia avançada i eines digitals per millorar l'exp
 
 Participant: Xavi Moreno
 Carlota
+Aina
 
 HOLAAAAAAAAAAA2

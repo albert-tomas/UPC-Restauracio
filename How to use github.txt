@@ -1,0 +1,19 @@
+HOW TO USE GITHUB & KEYWORDS
+
+What is GitHub?
+GitHub is a web-based platform that uses Git (a version control system) to help developers manage and collaborate on software projects. It allows multiple people to work on a project, track changes, review history, and manage contributions. GitHub hosts repositories, which contain the project files and its change history, enabling collaborative development.
+
+Keywords
+Repository: A directory or storage space where your project's files are stored, along with the history of all changes. (like Google Drive).
+Clone: A command that copies a repository from GitHub to your local machine, creating a local version of the project.
+Commit: A snapshot of changes in the repository. It represents a save point with a message describing what changes were made. A commit saves your changes locally in your Git repository. ALWAYS add a message when committing, VS Code has a bug where it will stay loading if there is not a message, you will have to close the app and run it again.
+Stage: only staged files are committed. If you have edited multiple files but only want to commit one, you stage it. Files not staged are not committed.
+Push: This sends your local commits (changes) to the remote repository on GitHub. A push sends the committed changes from your local repository to the remote repository. You cannot push without committing first. A commit records the change, and the push transfers it. It is advised to Pull before Pushing.
+Fetch: Downloads changes from a remote repository without merging them into your working directory. This allows you to review changes before applying them.
+Pull: This fetches and merges the latest changes from the remote repository to your local one.
+Branch: A separate working version of the project. This allows for multiple versions of the project to exist simultaneously without interfering with each other.
+Merge: Combines changes from one branch into another.
+Stash: Temporarily saves your uncommitted changes without committing them. This is useful when you need to switch branches but want to save your current work.
+
+Commands
+checkout: is a command in Git that allows you to switch between different branches or restore files in your working directory.

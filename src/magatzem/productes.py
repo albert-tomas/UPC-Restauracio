@@ -1,0 +1,1 @@
+# Funcions necessaries pel quiosc: (nom, imatge, categoria, preu) + nombre de ventes per la cuina

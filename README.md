@@ -13,10 +13,5 @@ El sistema es compon de tres seccions principals interconnectades:
 
 Aquest projecte integra tecnologia avançada i eines digitals per millorar l'experiència dels usuaris, fomentar la sostenibilitat i garantir un servei eficient. El sistema permet consultar dades com disponibilitat, preus i categories de productes, alhora que agilitza la gestió de recursos i encàrrecs dins del campus.
 
-Participant: Xavi Moreno
-
-With the "New" button in the PATH editor, add C:\Program Files\Git\bin\ and C:\Program Files\Git\cmd\ to the end of the list.
- git config --global user.name "albert-tomas"
-PS C:\Users\Administrador\Desktop\UPC_Restauracio> git config --global user.email alberttomas135@gmail.com
-
-HOLAAAAAAAAAAA
+Participants:
+Helena Fitó Rosillo: helena.fito@gmail.com

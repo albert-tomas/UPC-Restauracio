@@ -15,3 +15,5 @@ Aquest projecte integra tecnologia avançada i eines digitals per millorar l'exp
 
 Helena
 Albert
+
+With the "New" button in the PATH editor, add C:\Program Files\Git\bin\ and C:\Program Files\Git\cmd\ to the end of the list.

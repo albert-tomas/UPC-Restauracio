@@ -14,7 +14,7 @@ El sistema es compon de tres seccions principals interconnectades:
 Aquest projecte integra tecnologia avançada i eines digitals per millorar l'experiència dels usuaris, fomentar la sostenibilitat i garantir un servei eficient. El sistema permet consultar dades com disponibilitat, preus i categories de productes, alhora que agilitza la gestió de recursos i encàrrecs dins del campus.
 
 Participant: Xavi Moreno
-             Carlota
-             Aina
+Carlota
+Aina Aguilera
 
 HOLAAAAAAAAAAA2

@@ -1,0 +1,1 @@
+PEIX_ASCII = "🐟"

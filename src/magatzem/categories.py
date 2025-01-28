@@ -1,14 +1,13 @@
 
 # Categories de la càmera frigorífica
 CATEGORIES_CAMERA = [
-    "Begudes", "Productes làctics", "Carns", "Iogurts", "Formatges"
+    "Postres", "Iogurts", "Carns", "Fruites", "Embotits", "Formatges", "Verdures"
 ]
 
 # Categories de la despensa
 CATEGORIES_DESPENSA = [
-    "Olis", "Conserves de peix", "Conserves vegetals", "Snacks",
-    "Salses", "Llegums, arrossos i pasta", "Postres", "Fruites",
-    "Embotits", "Verdures"
+    "Begudes", "Olis", "Conserves de peix", "Conserves vegetals", "Snacks",
+    "Salses", "Productes làctics", "Llegums, arrossos i pasta"
 ]
 
 # Totes les categories

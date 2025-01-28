@@ -1,0 +1,123 @@
+Key points:
+•	Git tiene integridad Todo en Git es verificado mediante checksum, es imposible cambiar los contenidos de cualquier archivo o directorio sin que Git lo sepa. Bajo nivel
+
+•	Estados de los archivos en Git:
+o	Commited: Confirmed, data is stored in your data base
+o	Modified (but not confirmed)
+o	Staged: you have modified a file in your current version and it will be included in your next commit.
+
+
+•	3 sections of a Git project:
+o	Working Directory: Local copy of the git repository
+o	Staging Area: an index of what would go in your next commit
+o	.git directory: what gets copied when you clone a repository
+
+
+Install Git in windows: Git - Downloading Package (git-scm.com)
+
+Configure Git: 3 ways:
+•	/etc/gitconfig: Values for all the users and all the repositories.Option: git config --system
+•	~/.gitconfig o ~/.config/git/config: only for your user. Option: git config --global.
+•	config file en el directorio de Git (es decir, .git/config) Ony for the current repository.
+git/config overwrites /etc/gitconfi
+
+Configure your identity:
+$ git config --global user.name "John Doe" $ git config --global user.email johndoe@example.com
+
+For example: to change your name just in the current project: git config user.name "John Doe"
+
+Git config --list : shows you all the configurations
+
+Para ver la pagina de ayuda del manual de un comando: git help commando
+
+Obtain a Git project -> 2 ways:
+1.	Take an existing project or directory and import it into Git.
+a.	Go to the existing directory and use git init (created a subdirecory named .git that contains all the necesary files)
+2.	Clone an existing repository in Git from another server. git clone [url] (name of the reporitory) The last part is optional, ist just if you want a diferent directory name
+
+Save changes in the repository
+Life cycle of the status on an archive:
+
+•	Check the status of your repository: git status
+
+•	git add "file name": Track new files:  after this you can git commit and the new file would be included, if not it wasnt) + when a file has been modified -> prepares the file for the commit. Alwais before commit.
+
+•	Ignored files .gitingore -> files you have that you don't want to be transfered to git ( f.ex. Files created by your compilation sistem)
+o	The command cat .gitignore display the contents of the .gitignore file in the terminal.
+o	Examples of .gitignore lines
+*.[oa] - ignore files ended in “.o” or “.a” (compilation files)
+*~ - ignore files ended in “~” (temp files)
+
+# ignora los archivos terminados en .a *.a
+# pero no lib.a, aun cuando había ignorado los archivos terminados en .a en la línea anterior !lib.a
+# ignora unicamente el archivo TODO de la raiz, no subdir/TODO /TODO
+# ignora todos los archivos del directorio build/ build/
+# ignora doc/notes.txt, pero no este: doc/server/arch.txt doc/*.txt
+# ignora todos los archivos .txt del directorio doc/ doc/**/*.txt
+
+•	Git diff tells you the specific lines that were changed more specific than git status ( things that were changed but not added)
+•	Git diff --staged or git diff --cached tells you the staged changed but not commited
+
+•	After git add -> git commit ( confirm the changes done) -> Commit message is the last line of git status
+Git commit -m "commit message"
+Git commit -a -m "commit message" -> Para ahorrarte el add
+
+•	Eliminar archivos:
+Git rm ARCHIVO -> delete the file from your own repository and from your tracked files
+Git rm --cached README -> just to delete the file from the tracked files, it will remain in your local workspace -> Git will stop tracking it
+
+•	Change the name of a file: git mv file_from file_to
+
+Commit History:
+•	Git log -> tells you all the commit messages, date and author.
+•	Options: -p (shows the diff in every commit) , -2 (only the last 2 commits), --stat (shows the estadistics of each commit), --pretty=oneline (prints just in one line),
+--pretty=format -> you can specify your desired fromat. Example: git log --pretty=format:"%h - %an, %ar : %s"
+%h : abreviated hash ; %an: author; %ar: relative date (ex: 2 days ago); %s: summary.
+--graph -> shows a "graph" of the diferent ramifications:
+
+
+Temporal options: --since and --until ( ex: git log --since=2.weeks)
+To look jut on a function: git log -Sfunction_name
+
+Undo things:
+•	To redo a commit if you forgot a file or whants to change the summary : git commit --amend
+
+Example:
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend              -> this ends with just one commit
+
+•	To undo an add -> git reset HEAD <file>
+•	To undo modifications in a file-> git checkout --  <file>   CHANGES ARE DEFINITIVE
+
+Work with Remotes:
+1.	Git remote -> see the remote repositories you have configured (the option -v shows the associated URL) -> when you clone a repository the name of the remote is always origin.
+
+2.	Add Remote Repositories: git remote add [name] [url]
+
+3.	Bring and combine Remotes: git fetch [remote name] -> git fetch origin brings all the new work from the server you cloned it // You can also use git pull -> this combines the work automatically if he can
+
+4.	Share your Remote: git push [nombre-remoto] [nombre-rama] -> This only works if nobody has send an update in the midtime
+
+5.	To inspect a Remote: git remote show [name-remote]
+6.	Rename Remotes: git remote rename original_name new_name
+7.	Delete Remotes: git remote rm remote_name
+
+Tags: Used to tag inportant changed in the code
+1.	Git Tag -> lists the tags (There are a lot of options to just list a certain tags)
+2.	git tag -a version -m 'tag_message' -> Crear una etiqueta anotada, confiene info del etiquetador
+Git show version -> shows you the commit information
+3.	Git tag version-lw -> creates a light tag ( no info of the tagger, just markes the commit)
+4.	git tag -a version checksum del comit o la version abreviada You can see the checksum using git log
+5.	To share tags, the git push does not do this automatically. To send the tag to the server: git push origin --tags (all tags) git push origin v1.5 (one tag)
+6.	If you want to have in your workspace an specific taged version: $ git checkout -b version2 v2.0.0 ->this command creates a new branch named version2 based on the commit tagged as v2.0.0 and switches to it.
+
+Alias: to create alias for diferent comands, can be specified using git config.
+•	Examples:
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+$ git config --global alias.ci commit
+$ git config --global alias.st status
+Git ci = git commit
+
+$ git config --global alias.last 'log -1 HEAD'  -> creates a comand last that shows you the last commit

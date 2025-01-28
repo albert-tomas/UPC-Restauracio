@@ -16,5 +16,5 @@ Aquest projecte integra tecnologia avançada i eines digitals per millorar l'exp
 Participant: 
 Xavi Moreno xavier.moreno.rubio@estudiantat.upc.edu
 Carlota
-Aina Aguilera
+Aina Aguilera aina.aguilera@estudiantat.upc.edu
 Helena Fito Rosillo helena.fito@gmail.com

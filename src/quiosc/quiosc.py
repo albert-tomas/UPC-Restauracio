@@ -51,13 +51,13 @@ def ordena_productes(productes):
 
 #Retornar productes d'una categoria
 def producte_categoria(productes):
-    print("Quina categoria vols buscar?") # entiendo que esto va al final pero
-    categ=input()                         # de momento lo pongo aquí
+    print("Quina categoria vols buscar?") 
+    categ=input()                         
     producte_trobat = False
     for element in productes:
-    if element["categoria"]==categ:
-        producte_trobat = True
-        print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
+        if element["categoria"]==categ:
+            producte_trobat = True
+            print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
     if not(producte_trobat):
         print("Ho sentim, no disposem d'aquesta categoria")
 
@@ -65,7 +65,7 @@ def producte_categoria(productes):
 def cataleg(productes)
     print("~CATÀLEG~")
     for element in productes:
-    print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
+        print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
 #Encarrecs realitzats per un usuari
 
 #Encarrec. Pex: Usuari Joan - 5 Colacaos i 3 arros. Sumar al contador de ecarrecs de cada producte.

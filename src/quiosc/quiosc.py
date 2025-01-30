@@ -60,7 +60,7 @@ def producte_categoria(productes):
         print("Ho sentim, no disposem d'aquesta categoria")
 
 #Retornar cataleg de productes ordenat per preu
-def cataleg(productes)
+def cataleg(productes):
     print("~CATÀLEG~")
     for element in productes:
         print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
@@ -68,12 +68,16 @@ def cataleg(productes)
 #Encarrecs realitzats per un usuari
 #Encarrec. Pex: Usuari Joan - 5 Colacaos i 3 arros. Sumar al contador de encarrecs de cada producte.
 
-#Registrar usuaris
-def registrar_usuari():
-  usuari = input("Escrigui el seu nom d'usuari: ")
+#Registrar usuaris amb base de dades
+base_dades=[{"nom":"Carlota","naixement":"2005","telefon":"652900676"}]
+def registrar_usuari(base_dades):
+  usuari = input("Registre d'usuari. Benvingut! Escrigui el seu nom d'usuari: ")
   any_neixament = input('Escrigui el seu any de neixament: ')
   telèfon = input('Escrigui el seu número de telèfon: ')
   print('Usuari registrat amb éxit')
+  nou_usuari={"nom":usuari,"naixement":any_neixament,"telefon":telèfon}
+  base_dades=base_dades.append(nou_usuari)
+  return base_dades
 
 #Categories disponibles
 def categories_disponibles(productes):

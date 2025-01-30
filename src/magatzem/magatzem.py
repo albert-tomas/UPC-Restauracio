@@ -70,7 +70,7 @@ def coloca_producte(despensa, camera, id_producte):
                          safata.append([id_producte])
                          return
                     # Si la categoria de la safata no correspon al producte que volem col·locar, 
-                    # anem a la següent casella directament, no cal mirar les safates de darrere
+                    # anem a la. següent casella directament, no cal mirar les safates de darrere
                     if categoria != safata[0]:
                         break
                     # Si a la safata hi caben productes i la categoria és correcte, l'afegim, sino continuarem a la següent safata

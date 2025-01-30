@@ -13,4 +13,5 @@ CATEGORIES_DESPENSA = [
 # Totes les categories
 CATEGORIES_TOTAL = CATEGORIES_CAMERA + CATEGORIES_DESPENSA
 
+
 # Funcions per veure si una categoria es valida, i per saber si es de Camara o de Despensa.

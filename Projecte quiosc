@@ -1,0 +1,7 @@
+1) Registrar usuari
+2) Obtenir productes per categoria
+3) Obtenir categoria d'un producte
+4) Obtenir categories disponibles
+5) Obtenir productes ordenats per preu
+6) Catàleg (llistat de tots els productes)
+7) Fer encàrreg (ha de cridar a "search" del magatzem)

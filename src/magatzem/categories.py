@@ -1,7 +1,7 @@
 
 # Categories de la càmera frigorífica
 CATEGORIES_CAMERA = [
-    "Postres", "Iogurts", "Carns", "Fruites", "Embotits", "Formatges", "Verdures"
+    ["Postres", '🐟'], "Iogurts", "Carns", "Fruites", "Embotits", "Formatges", "Verdures"
 ]
 
 # Categories de la despensa

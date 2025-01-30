@@ -68,7 +68,6 @@ def cataleg(productes)
 #Encarrecs realitzats per un usuari
 #Encarrec. Pex: Usuari Joan - 5 Colacaos i 3 arros. Sumar al contador de encarrecs de cada producte.
 
-#Registrar usuaris
 #Registrar usuaris amb base de dades
 base_dades=[{"nom":"Carlota","naixement":"2005","telefon":"652900676"}]
 def registrar_usuari(base_dades):

@@ -60,7 +60,7 @@ def producte_categoria(productes):
         print("Ho sentim, no disposem d'aquesta categoria")
 
 #Retornar cataleg de productes ordenat per preu
-def cataleg(productes)
+def cataleg(productes):
     print("~CATÀLEG~")
     for element in productes:
         print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")

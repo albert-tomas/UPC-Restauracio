@@ -143,6 +143,27 @@ def obtenir_productes_safata(prestatge_index, nivell_index, safata_index, zona_m
         return camera[prestatge_index][nivell_index][safata_index]
 
 
+def retirar_producte(despensa, camera, id_producte):
+    producte = buscar_producte(despensa, camera, id_producte)
+
+    zona_magatzem_nom = determinar_zona_magatzem(id_producte)
+
+    if zona_magatzem_nom == "despensa":
+        zona_magatzem = despensa
+    else:
+        zona_magatzem = camera
+
+    zona_magatzem[producte[0]][producte[1]][producte[2]][1].pop(producte[3])
+
+    #print(despensa[llista[0]][llista[1]][llista[2]][1][llista[3]])
+
+    if zona_magatzem_nom == "despensa":
+        despensa = zona_magatzem
+    else:
+        camera = zona_magatzem
+    
+    
+
 
 # CODI PRINCIPAL
 despensa = inicialitzar_despensa()
@@ -152,12 +173,12 @@ coloca_producte(despensa, camera, "cc")
 coloca_producte(despensa, camera, "oli1")
 coloca_producte(despensa, camera, "cc")
 coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "oli1")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "cc")
 coloca_producte(despensa, camera, "oli2")
 coloca_producte(despensa, camera, "cc")
 coloca_producte(despensa, camera, "cc")
+coloca_producte(despensa, camera, "oli1")
+coloca_producte(despensa, camera, "cc")
+coloca_producte(despensa, camera, "cc")
 # coloca_producte(despensa, "oli1")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
@@ -173,14 +194,23 @@ coloca_producte(despensa, camera, "cc")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
-#pprint(despensa)
+pprint(despensa)
 
-print(despensa[0][1][0])
+# print(despensa[0][1][0])
                      
-print(buscar_producte(despensa, camera, "oli2"))
+# print(buscar_producte(despensa, camera, "oli2"))
 
-print(obtenir_productes_safata(0,1,0,"despensa"))
+# print(obtenir_productes_safata(0,1,0,"despensa"))
                      
 
+retirar_producte(despensa, camera, "oli1")
+pprint(despensa)
+# lista = ['olis', ['oli1', 'oli2', 'oli3']]
 
+# print(lista[1][0])
+# lista[1].pop(0)
+# print(lista)
 
+# llista = [0, 1, 0, 2]
+
+# print(despensa[llista[0]][llista[1]][llista[2]][1][llista[3]])

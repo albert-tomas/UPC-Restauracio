@@ -2,12 +2,12 @@ from pprint import pprint
 from productes import productes
 from categories import *
 
-# Configuració inicial
-num_prestatges_camera = 4
-num_prestatges_despensa = 4
-num_nivells = 4 # Nombre de nivells
-num_safates = 4 # Nombre de safates en una casella
-capacitat_safata = 4 #Nombre d'elements que hi caben en una safata
+# Configuració inicial es fa a test_magatzem
+#num_prestatges_camera = 4
+#num_prestatges_despensa = 4
+#num_nivells = 4 # Nombre de nivells
+#num_safates = 4 # Nombre de safates en una casella
+capacitat_safata = 4 #Nombre d'elements que caben en una safata
 
 #Funcions Necessaries:
 
@@ -24,7 +24,7 @@ capacitat_safata = 4 #Nombre d'elements que hi caben en una safata
 # Tal com hem plantejat el codi, cada safata serà una llista, el primer element serà la
 # categoria dels productes, i el segon element serà la llista dels productes (només guardem la id del producte)
 # Exemple de safata: ["beguda", ["cc", "cc", "beer1"]]
-def inicialitzar_despensa():
+def inicialitzar_despensa(num_safates, num_nivells, num_prestatges_despensa):
     # despensa = [[[1,2,3],[4,5,6],[7,8,9]],
     #            [[10,11,12],[13,14,15],[16,17,18]],
     #            [[19,20,21],[22,23,24],[25,26,27]]]
@@ -32,13 +32,13 @@ def inicialitzar_despensa():
     despensa = [[[[] for safata in range(num_safates)] for nivell in range(num_nivells)] for prestatges in range(num_prestatges_despensa)]
     return despensa
 
-def inicialitzar_camera():
+#def inicialitzar_camera(num_safates, num_nivells, num_prestatges_camera):
     # despensa = [[[1,2,3],[4,5,6],[7,8,9]],
     #            [[10,11,12],[13,14,15],[16,17,18]],
     #            [[19,20,21],[22,23,24],[25,26,27]]]
     #Fa el mateix que abans però amb les dimensions correctes
-    camera = [[[[] for safata in range(num_safates)] for nivell in range(num_nivells)] for prestatges in range(num_prestatges_camera)]
-    return camera
+#   camera = [[[[] for safata in range(num_safates)] for nivell in range(num_nivells)] for prestatges in range(num_prestatges_camera)]
+#    return camera
 
 # Quan busquem un producte amb una certa id al magatzem, primer hem de saber a quina categoria pertany
 def buscar_categoria(id_producte):
@@ -165,20 +165,11 @@ def retirar_producte(despensa, camera, id_producte):
     
 
 
-# CODI PRINCIPAL
-despensa = inicialitzar_despensa()
-camera = inicialitzar_camera()
+# CODI PRINCIPAL MOGUT A TEST_MAGATZEM
+#despensa = inicialitzar_despensa(num_safates, num_nivells, num_prestatges_despensa)
+#camera = inicialitzar_camera(num_safates, num_nivells, num_prestatges_camera)
 
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "oli1")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "oli2")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "oli1")
-coloca_producte(despensa, camera, "cc")
-coloca_producte(despensa, camera, "cc")
+
 # coloca_producte(despensa, "oli1")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
@@ -194,7 +185,7 @@ coloca_producte(despensa, camera, "cc")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
-pprint(despensa)
+#pprint(despensa)
 
 # print(despensa[0][1][0])
                      
@@ -203,8 +194,7 @@ pprint(despensa)
 # print(obtenir_productes_safata(0,1,0,"despensa"))
                      
 
-retirar_producte(despensa, camera, "oli1")
-pprint(despensa)
+
 # lista = ['olis', ['oli1', 'oli2', 'oli3']]
 
 # print(lista[1][0])

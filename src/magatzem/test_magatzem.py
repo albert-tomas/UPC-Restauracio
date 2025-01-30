@@ -4,6 +4,8 @@ from categories import *
 
 from magatzem import coloca_producte, inicialitzar_magatzem, retirar_producte, buscar_producte, determinar_zona_magatzem, obtenir_productes_safata
 from productes import afegir_producte_a_base_de_dades
+from magatzem import coloca_producte, inicialitzar_magatzem, retirar_producte, buscar_producte, determinar_zona_magatzem, obtenir_productes_safata
+from productes import afegir_producte_a_base_de_dades
 
 print("Per inicialitzar el magatzem introdueix les seguents dades: ")
 num_prestatges_despensa = int(input("Introdueix el nombre de prestatges de la despensa: "))

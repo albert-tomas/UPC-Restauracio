@@ -43,7 +43,32 @@ productes = [
                   "categoria": "beguda"
                 }
                 ]
-
+productes_vendes = [
+                { "id": "cc-zero",
+                  "vendes": 2
+                },
+                { "id": "cc",
+                  "vendes": 2
+                },
+                { "id": "beer1",
+                  "vendes": 2
+                },
+                { "id": "beer2",
+                  "ventes": 2
+                },
+                { "id": "oli1",
+                  "vendes": 2
+                },
+                { "id": "beer3",
+                  "vendes": 2
+                },
+                { "id": "oli2",
+                  "vendes": 2
+                },
+                { "id": "fanta",
+                  "vendes": 2
+                }
+                ]
 def afegir_producte_a_base_de_dades():
     id_prod = input("Introdueix el id del producte a afegir: ")
     nom_prod = input("Introdueix el nom del producte: ")

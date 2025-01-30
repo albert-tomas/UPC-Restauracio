@@ -1,6 +1,6 @@
 from pprint import pprint
-from productes import productes
-from categories import *
+from src.magatzem.productes import productes
+from src.magatzem.categories import *
 
 # Configuració inicial es fa a test_magatzem
 #num_prestatges_camera = 4

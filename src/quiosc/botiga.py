@@ -1,5 +1,4 @@
-#Fucnions necessaries
-#EXEMPLE
+# Variables
 productes= [
                 { "quantitat": "12",
                   "nom":"coca-cola zero",
@@ -42,31 +41,19 @@ productes= [
                   "categoria": "beguda"
                 }
                 ]
-#Ordenar els productes per preu
+
+#Ordenador de preus
 def ordena_productes(productes):
     productes = sorted(productes, key = lambda d:d["preu"])
     return productes
 
-#Retornar productes d'una categoria
-def producte_categoria(productes):
-    print("Quina categoria vols buscar?")
-    category=input()
-    categ=category.lower()
-    producte_trobat = False
-    for element in productes:
-      if element["categoria"]==categ:
-          producte_trobat = True
-          print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
-      if not(producte_trobat):
-          print("Ho sentim, no disposem d'aquesta categoria")
-
-#Retornar cataleg de productes ordenat per preu
+#Catàleg
 def cataleg(productes):
     print("~CATÀLEG~")
     for element in productes:
-        print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
+      print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
 
-#Categories disponibles
+#Categories existents
 def categories_disponibles(productes):
     llista_categories=[]
     for element in productes:
@@ -74,37 +61,46 @@ def categories_disponibles(productes):
            llista_categories.append(element["categoria"])
     return llista_categories
 
-print("Bon dia! Benvingut/da al Quiosc de la UPC!")
-while True:
-    option=input("Què vols fer? \n (A) Accedir al catàleg \n (B) Consultar les categories \n (C) Consultar productes d'una categoria \n (D) Sortir \n -->")
-    if option in ['A','a']:
-        productes = ordena_productes(productes)
-        cataleg(productes)
-        decision=input("Avisa quan vulguis tornar:\n -->")
-    elif option in ['B','b']:
-        llista_categories=categories_disponibles(productes)
-        print(f"Llista de categories: {llista_categories}")
-        decision=input("Avisa quan vulguis tornar:\n -->")
-    elif option in ['C','c']:
-        producte_categoria(productes)
-        decision=input("Avisa quan vulguis tornar:\n -->")
-    elif option in ['D','d']:
-        print("Gràcies per venir!")
-        break
-
-
-'''
 #Categoria d'un producte
 def categoria_un_producte(productes, elProducte):
-
-  # filter / lambda
     for element in productes:
         if element["nom"]==elProducte:
             categ=element["categoria"]
             return categ
+    return "No disposem d'aquest producte"
 
-    return "sense categoria"
+#Productes d'una categoria
+def producte_categoria(productes, category):
+    producte_trobat = False
+    for element in productes:
+      if element["categoria"]==category:
+          producte_trobat = True
+          print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
+      if not(producte_trobat):
+          print("Ho sentim, no disposem d'aquesta categoria")
 
-laCategoria = categoria_un_producte(productes, "fanta")
-print(laCategoria)
-'''
+#Registre d'usuari a la base de dades
+def registrar_usuari(usuari, any, telefon):
+  print('Usuari registrat amb éxit')
+  perfil={"Nom usuari":{usuari}, "Any neixament": {any}, "Contacte": {telefon} }
+  return perfil
+
+#Proves
+
+#productes=ordena_productes(productes)
+#cataleg(productes)
+
+
+#llista_categories=categories_disponibles(productes)
+#print(llista_categories)
+
+
+#laCategoria = categoria_un_producte(productes,"xocolata")
+#print(laCategoria)
+
+
+#producte_categoria(productes,"beguda")
+
+
+#perfil=registrar_usuari("Xavi", 2005, 123456789)
+#print(perfil)

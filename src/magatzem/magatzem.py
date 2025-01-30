@@ -4,47 +4,55 @@ from productes import productes
 # Configuració inicial
 num_prestatges_frigo = 4
 num_prestatges_despensa = 4
-num_nivells = 4 # No coneixem el número de Nivells
-num_safates = 4 # No coneixem el número de safates, són il·limitades?
-capacitat_safata = 4 #Nombre d'elements que hi ha en una safata
+num_nivells = 4 # Nombre de nivells
+num_safates = 4 # Nombre de safates en una casella
+capacitat_safata = 4 #Nombre d'elements que hi caben en una safata
 
-# Funció per Inicialitzar el magatzem
-# Matrius tridimensionals (3D) per representar els prestatges, nivells i safates.
-# Ordre LIFO (Last In, First Out)
+# Creem una matriu tridimensional (amb nombre de nivells i prestatges, i nombre de safates per casella)
+# Tal com hem plantejat el codi, cada safata serà una llista, el primer element serà la
+# categoria dels productes, i el segon element serà la llista dels productes (només guardem la id del producte)
+# Exemple de safata: ["beguda", ["cc", "cc", "beer1"]]
+def inicialitzar_despensa():
+    # despensa = [[[1,2,3],[4,5,6],[7,8,9]],
+    #            [[10,11,12],[13,14,15],[16,17,18]],
+    #            [[19,20,21],[22,23,24],[25,26,27]]]
+    #Fa el mateix que abans però amb les dimensions correctes
+    despensa = [[[[] for safata in range(num_safates)] for nivell in range(num_nivells)] for prestatges in range(num_prestatges_despensa)]
+    return despensa
 
-#print(productes)
-
-
-
-# despensa = [[[1,2,3],[4,5,6],[7,8,9]],
-#            [[10,11,12],[13,14,15],[16,17,18]],
-#            [[19,20,21],[22,23,24],[25,26,27]]]
-#Fa el mateix que abans però amb les dimensions correctes
-despensa = [[[[] for safata in range(num_safates)] for nivell in range(num_nivells)] for prestatges in range(num_prestatges_despensa)]
-
-def buscar_categoria(despensa,id_producte):
+# Quan busquem un producte amb una certa id al magatzem, primer hem de saber a quina categoria pertany
+def buscar_categoria(id_producte):
      for product in productes:
         if product["id"] == id_producte:
             return product["categoria"]
 
+# Actualment a cada casella hi pot haver una única categoria de productes, col·loquem els productes a la primera posició disponible
+# De moment no mirem res més (com que a un mateix nivell només hi pot haver una categoria)
 def coloca_producte(despensa, id_producte):
     
-    categoria = buscar_categoria(despensa, id_producte)
+    #busquem la categoria del producte que volem col·locar
+    categoria = buscar_categoria(id_producte)
 
+    # Recorrem de dalt a l'esquerra a baix a la dreta
     for estanteria in despensa:
         for nivell in estanteria:
                 for safata in nivell:
+                    # Si la safata està buida, no té cap categoria o producte, l'afegim aquí i acabem
                     if len(safata) == 0:
                          safata.append(categoria)
                          safata.append([id_producte])
                          return
+                    # Si la categoria de la safata no correspon al producte que volem col·locar, 
+                    # anem a la següent casella directament, no cal mirar les safates de darrere
                     if categoria != safata[0]:
                         break
+                    # Si a la safata hi caben productes i la categoria correspon, l'afegim, sino continuarem a la següent safata
                     if len(safata[1]) < capacitat_safata:
-                        #l = [id_producte]
                         safata[1].append(id_producte)
-                        #safata[1] = "test2"
                         return
+
+
+despensa = inicialitzar_despensa()
 
 coloca_producte(despensa, "cc")
 coloca_producte(despensa, "oli1")
@@ -77,7 +85,7 @@ pprint(despensa)
 
 def buscar_producte(despensa, id_producte):
      
-     categoria = buscar_categoria(despensa, id_producte)
+     categoria = buscar_categoria(id_producte)
 
      estanteria_index = 0
      nivell_index = 0

@@ -45,6 +45,7 @@ productes= [
 #Ordenar els productes per preu
 def ordena_productes(productes):
     productes = sorted(productes, key = lambda d:d["preu"])
+    return productes
 
 #Retornar productes d'una categoria
 def producte_categoria(productes):

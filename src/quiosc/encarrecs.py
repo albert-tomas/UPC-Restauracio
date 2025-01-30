@@ -12,14 +12,15 @@ usuaris = [
             "quantitat": 2}]
     }]
 
-def encarrec(usuaris, nomUsuari, laComanda):
-  usuari = "carlota"
-  usuari.append(laComanda)
-
-
 comanda = [{"comanda" : "coca-cola",
             "quantitat" : 2},
            {"comanda": "oli",
             "quantitat": 1}]
 
-encarrec(usuaris,"carlota", comanda) 
+def encarrec(usuaris, nomUsuari, laComanda):
+  for u in usuaris:
+    if u["nom"] == nomUsuari:
+      u['comandes'].append(laComanda)
+
+encarrec(usuaris,"carlota", comanda)
+print(usuaris)

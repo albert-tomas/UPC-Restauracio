@@ -42,17 +42,15 @@ productes= [
                   "categoria": "beguda"
                 }
                 ]
-#ordenem els productes
+#Ordenar els productes per preu
 def ordena_productes(productes):
     productes = sorted(productes, key = lambda d:d["preu"])
-#Registrar usuari
-
-#Categories disponibles
 
 #Retornar productes d'una categoria
 def producte_categoria(productes):
     print("Quina categoria vols buscar?") 
-    categ=input()                         
+    category=input()
+    categ=category.lower()                        
     producte_trobat = False
     for element in productes:
         if element["categoria"]==categ:
@@ -66,6 +64,31 @@ def cataleg(productes)
     print("~CATÀLEG~")
     for element in productes:
         print(element["nom"], "-", element["preu"], "$", "-", element["quantitat"], "unitats disponibles")
-#Encarrecs realitzats per un usuari
 
-#Encarrec. Pex: Usuari Joan - 5 Colacaos i 3 arros. Sumar al contador de ecarrecs de cada producte.
+#Encarrecs realitzats per un usuari
+#Encarrec. Pex: Usuari Joan - 5 Colacaos i 3 arros. Sumar al contador de encarrecs de cada producte.
+
+#Registrar usuaris
+def registrar_usuari():
+  usuari = input("Escrigui el seu nom d'usuari: ")
+  any_neixament = input('Escrigui el seu any de neixament: ')
+  telèfon = input('Escrigui el seu número de telèfon: ')
+  print('Usuari registrat amb éxit')
+
+#Categories disponibles
+def categories_disponibles(productes):
+    llista_categories=[]
+    for element in productes:
+        if element["categoria"] not in llista_categories:
+           llista_categories.append(element["categoria"])
+    print(f"Llista de categories: {llista_categories}")
+
+#Categoria d'un producte
+def categoria_un_producte(productes):
+    print("Quin producte del catàleg vols buscar?")
+    product=input()
+    prod=product.lower()
+    for element in productes:
+        if element["nom"]==prod:
+           categ=element["categoria"]
+           print(f"El producte {prod} és de la categoria {categ}.")

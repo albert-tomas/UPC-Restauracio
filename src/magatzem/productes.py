@@ -47,7 +47,7 @@ productes = [
 def afegir_producte_a_base_de_dades():
     id_prod = input("Introdueix el id del producte a afegir: ")
     nom_prod = input("Introdueix el nom del producte: ")
-    preu_prod = input("Introdueix el preu del producte: ")
+    preu_prod = float(input("Introdueix el preu del producte: "))
     categoria_prod = input("Introdueix la categoria del producte: ")
     producte = { "id": id_prod,
                   "nom": nom_prod,
@@ -55,6 +55,6 @@ def afegir_producte_a_base_de_dades():
                   "categoria": categoria_prod
                 }
     productes.append(producte)
-    return
+    return productes
 #afegir_producte_a_base_de_dades()
-pprint(productes)
+#pprint(productes)

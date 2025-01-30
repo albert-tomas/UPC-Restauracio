@@ -24,7 +24,7 @@ capacitat_safata = 4 #Nombre d'elements que caben en una safata
 # Tal com hem plantejat el codi, cada safata serà una llista, el primer element serà la
 # categoria dels productes, i el segon element serà la llista dels productes (només guardem la id del producte)
 # Exemple de safata: ["beguda", ["cc", "cc", "beer1"]]
-def inicialitzar_despensa(num_safates, num_nivells, num_prestatges_despensa):
+def inicialitzar_magatzem(num_safates, num_nivells, num_prestatges_despensa):
     # despensa = [[[1,2,3],[4,5,6],[7,8,9]],
     #            [[10,11,12],[13,14,15],[16,17,18]],
     #            [[19,20,21],[22,23,24],[25,26,27]]]
@@ -134,7 +134,7 @@ def determinar_zona_magatzem(id_producte):
         print("La categoria no és correcta")
 
 #Li diem una safata concreta i retorna la llista dels productes
-def obtenir_productes_safata(prestatge_index, nivell_index, safata_index, zona_magatzem):
+def obtenir_productes_safata(prestatge_index, nivell_index, safata_index, zona_magatzem, despensa, camera):
     
     if zona_magatzem == "despensa":
         return despensa[prestatge_index][nivell_index][safata_index]

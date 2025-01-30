@@ -57,4 +57,4 @@ def afegir_producte_a_base_de_dades():
     productes.append(producte)
     return
 #afegir_producte_a_base_de_dades()
-#pprint(productes)
+pprint(productes)

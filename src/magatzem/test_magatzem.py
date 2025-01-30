@@ -1,6 +1,7 @@
 from pprint import pprint
 from productes import productes
 from categories import *
+
 from magatzem import  *
 from src.magatzem.productes import afegir_producte_a_base_de_dades
 
@@ -9,8 +10,8 @@ num_prestatges_despensa = int(input("Introdueix el nombre de prestatges de la de
 num_prestatges_camara = int(input("Introdueix el nombre de prestatges de la camara frigorifica: "))
 num_nivells = int(input("Introdueix el nombre de nivells per prestatge: "))
 num_safates = int(input("Introdueix el nombre de safates per nivell: "))
-despensa = inicialitzar_despensa(num_safates,num_nivells,num_prestatges_despensa)
-camera = inicialitzar_despensa(num_safates,num_nivells,num_prestatges_camara)
+despensa = inicialitzar_magatzem(num_safates,num_nivells,num_prestatges_despensa)
+camera = inicialitzar_magatzem(num_safates,num_nivells,num_prestatges_camara)
 
 coloca_producte(despensa, camera, "cc")
 coloca_producte(despensa, camera, "oli1")

@@ -9,7 +9,33 @@ from pprint import pprint
 from src.magatzem.magatzem import inicialitzar_magatzem, coloca_producte, buscar_producte, retirar_producte
 
 from src.magatzem.productes import productes
-
+#llista de ventes
+productes_vendes = [
+                { "id": "cc-zero",
+                  "vendes": 1
+                },
+                { "id": "cc",
+                  "vendes": 2
+                },
+                { "id": "beer1",
+                  "vendes": 9
+                },
+                { "id": "beer2",
+                  "vendes": 0
+                },
+                { "id": "oli1",
+                  "vendes": 2
+                },
+                { "id": "beer3",
+                  "vendes": 5
+                },
+                { "id": "oli2",
+                  "vendes": 2
+                },
+                { "id": "fanta",
+                  "vendes": 2
+                }
+                ]
 # Configuració inicial es fa a test_magatzem
 num_prestatges_camera = 4
 num_prestatges_despensa = 4
@@ -58,12 +84,22 @@ def servir_encarrec(comandes, despensa, camera):
             posicio = buscar_producte(despensa,camera,primer_producte["comanda"])
             if  posicio!=None:
                 retirar_producte(despensa,camera, primer_producte["comanda"])
-
+                for product in productes_vendes:
+                    if product["id"] == primer_producte["comanda"]:
+                        product["vendes"] += 1
+                        break
             else:
                 print("Ja no ens queden mes: ",primer_producte["comanda"])
     comandes.pop(0) #elimino la primera comanda ja realitzada
     print(comandes)
 
-servir_encarrec(comandes,despensa,camera)
+def mostrar_cataleg_per_ventes():
+    llista_ordenada = sorted(productes_vendes, key=lambda product:product["vendes"], reverse=True)
+    print(llista_ordenada)
 
-pprint(despensa)
+
+servir_encarrec(comandes,despensa,camera)
+#print(productes_vendes)
+#pprint(despensa)
+print(productes_vendes)
+mostrar_cataleg_per_ventes()

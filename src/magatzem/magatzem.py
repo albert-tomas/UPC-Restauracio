@@ -41,16 +41,16 @@ def inicialitzar_magatzem(num_safates, num_nivells, num_prestatges_despensa):
 #    return camera
 
 # Quan busquem un producte amb una certa id al magatzem, primer hem de saber a quina categoria pertany
-def buscar_categoria(id_producte):
-     for product in productes:
+def buscar_categoria(id_producte, productes_actualitzats):
+     for product in productes_actualitzats:
         if product["id"] == id_producte:
             return product["categoria"]
 
 # Actualment a cada casella hi pot haver una única categoria de productes, col·loquem els productes a la primera posició disponible
 # De moment no mirem res més (com que a un mateix nivell només hi pot haver una categoria)
-def coloca_producte(despensa, camera, id_producte):
+def coloca_producte(despensa, camera, id_producte, productes_actualitzats):
 
-    zona_magatzem_nom = determinar_zona_magatzem(id_producte)
+    zona_magatzem_nom = determinar_zona_magatzem(id_producte, productes_actualitzats)
 
     if zona_magatzem_nom == "despensa":
         zona_magatzem = despensa
@@ -58,7 +58,7 @@ def coloca_producte(despensa, camera, id_producte):
         zona_magatzem = camera
     
     #busquem la categoria del producte que volem col·locar
-    categoria = buscar_categoria(id_producte)
+    categoria = buscar_categoria(id_producte, productes_actualitzats)
 
     # Recorrem de dalt a l'esquerra a baix a la dreta
     for estanteria in zona_magatzem:
@@ -86,11 +86,11 @@ def coloca_producte(despensa, camera, id_producte):
 
 # Aquesta funció retorna la primera posició del producte que volem buscar
 # Exemple: [0,1,0,2] vol dir estanteria 0, nivell 1, safata 0 i agafem la coca-cola número 2
-def buscar_producte(despensa, camera, id_producte):
+def buscar_producte(despensa, camera, id_producte, productes_actualitzats):
      
-     categoria = buscar_categoria(id_producte)
+     categoria = buscar_categoria(id_producte, productes_actualitzats)
 
-     zona_magatzem_nom = determinar_zona_magatzem(id_producte)
+     zona_magatzem_nom = determinar_zona_magatzem(id_producte, productes_actualitzats)
 
      if zona_magatzem_nom == "despensa":
         zona_magatzem = despensa
@@ -119,9 +119,9 @@ def buscar_producte(despensa, camera, id_producte):
         nivell_index = 0
 
 # Quan es vulgui afegir o treure un producte li passarem la id i ens dirà si correspon a la despensa o la camera
-def determinar_zona_magatzem(id_producte):
+def determinar_zona_magatzem(id_producte, productes_actualitzats):
     
-    categoria = buscar_categoria(id_producte)
+    categoria = buscar_categoria(id_producte, productes_actualitzats)
 
     # categories_despensa = ["begudes", "olis", "peixos", "vegetals", "snacks", "salses", "lactics", "llegums_arrossos_pasta"]
     # categories_camera = ["postres", "iogurts", "carns", "fruites", "embotits", "formatges", "verdures"]
@@ -143,10 +143,10 @@ def obtenir_productes_safata(prestatge_index, nivell_index, safata_index, zona_m
         return camera[prestatge_index][nivell_index][safata_index]
 
 
-def retirar_producte(despensa, camera, id_producte):
-    producte = buscar_producte(despensa, camera, id_producte)
+def retirar_producte(despensa, camera, id_producte, productes_actualitzats):
+    producte = buscar_producte(despensa, camera, id_producte, productes_actualitzats)
 
-    zona_magatzem_nom = determinar_zona_magatzem(id_producte)
+    zona_magatzem_nom = determinar_zona_magatzem(id_producte, productes_actualitzats)
 
     if zona_magatzem_nom == "despensa":
         zona_magatzem = despensa

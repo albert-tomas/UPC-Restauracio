@@ -8,6 +8,17 @@ num_nivells = 4 # Nombre de nivells
 num_safates = 4 # Nombre de safates en una casella
 capacitat_safata = 4 #Nombre d'elements que hi caben en una safata
 
+#Funcions Necessaries:
+
+#Funció Per afegir productes. Li ha d'entrar, categoria, Producte i quantitat.
+
+#Funció per obtenir produces per posició? Varis productes a l'hora?
+
+#Buscar producte per la cuina lifo
+
+#Retirar productes per la cuina
+
+
 # Creem una matriu tridimensional (amb nombre de nivells i prestatges, i nombre de safates per casella)
 # Tal com hem plantejat el codi, cada safata serà una llista, el primer element serà la
 # categoria dels productes, i el segon element serà la llista dels productes (només guardem la id del producte)
@@ -46,12 +57,40 @@ def coloca_producte(despensa, id_producte):
                     # anem a la següent casella directament, no cal mirar les safates de darrere
                     if categoria != safata[0]:
                         break
-                    # Si a la safata hi caben productes i la categoria correspon, l'afegim, sino continuarem a la següent safata
+                    # Si a la safata hi caben productes i la categoria és correcte, l'afegim, sino continuarem a la següent safata
                     if len(safata[1]) < capacitat_safata:
                         safata[1].append(id_producte)
                         return
 
+# Aquesta funció retorna la primera posició del producte que volem buscar
+# Exemple: [0,1,0,2] vol dir estanteria 0, nivell 1, safata 0 i agafem la coca-cola número 2
+def buscar_producte(despensa, id_producte):
+     
+     categoria = buscar_categoria(id_producte)
 
+     estanteria_index = 0
+     nivell_index = 0
+     safata_index = 0
+     producte_index = 0
+
+     for estanteria in despensa:
+        for nivell in estanteria:
+            for safata in nivell:
+                if safata and safata[0] == categoria:
+
+                        for producte in safata[1]:
+                            if id_producte == producte:
+                                return [estanteria_index, nivell_index, safata_index, producte_index]
+                            producte_index += 1
+                        producte_index = 0
+                safata_index += 1
+            nivell_index += 1
+            safata_index = 0
+        estanteria_index += 1
+        nivell_index = 0
+
+
+# CODI PRINCIPAL
 despensa = inicialitzar_despensa()
 
 coloca_producte(despensa, "cc")
@@ -81,43 +120,9 @@ coloca_producte(despensa, "cc")
 # coloca_producte(despensa, "cc")
 pprint(despensa)
 
-
-
-def buscar_producte(despensa, id_producte):
-     
-     categoria = buscar_categoria(id_producte)
-
-     estanteria_index = 0
-     nivell_index = 0
-     safata_index = 0
-     producte_index = 0
-
-     for estanteria in despensa:
-        for nivell in estanteria:
-            for safata in nivell:
-                if safata and safata[0] == categoria:
-
-                        for producte in safata[1]:
-                            if id_producte == producte:
-                                return [estanteria_index, nivell_index, safata_index, producte_index]
-                            producte_index += 1
-                        producte_index = 0
-                safata_index += 1
-            nivell_index += 1
-            safata_index = 0
-        estanteria_index += 1
-        nivell_index = 0
                      
 print(buscar_producte(despensa, "oli2"))
                      
 
-#Funcions Necessaries:
 
-#Funció Per afegir productes. Li ha d'entrar, categoria, Producte i quantitat.
-
-#Funció per obtenir produces per posició? Varis productes a l'hora?
-
-#Buscar producte per la cuina lifo
-
-#Retirar productes per la cuina
 

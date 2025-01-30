@@ -71,7 +71,7 @@ def cataleg(productes)
 #Registrar usuaris amb base de dades
 base_dades=[{"nom":"Carlota","naixement":"2005","telefon":"652900676"}]
 def registrar_usuari(base_dades):
-  usuari = input("Escrigui el seu nom d'usuari: ")
+  usuari = input("Registre d'usuari. Benvingut! Escrigui el seu nom d'usuari: ")
   any_neixament = input('Escrigui el seu any de neixament: ')
   telèfon = input('Escrigui el seu número de telèfon: ')
   print('Usuari registrat amb éxit')

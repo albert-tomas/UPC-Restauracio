@@ -62,7 +62,7 @@ comandes = [
     "comandes": [{
             "comanda" : "cc",
             "quantitat" : 3},
-           {"comanda": "oli1",
+            {"comanda": "oli1",
             "quantitat": 8}]
     },
     {

@@ -14,12 +14,14 @@ El sistema es compon de tres seccions principals interconnectades:
        coloca_producte(): Afegeix un producte al magatzem per categoria i quantitat.
        buscar_producte(): Cerca la ubicació d'un producte al magatzem segons la seva ID.
        retirar_producte(): Retira un producte del magatzem per la seva ID.
-       obtenir_productes_safata(): Retorna la llista de productes d'una safata específica
+       obtenir_productes_safata(): Retorna la llista de productes d'una safata específica.
         
 2. **Quiosc interactiu:** Eina digital per a la personalització d'encàrrecs, consulta de productes i gestió d’informació de manera accessible.
-    Funcions disponibles: 
+    Funcions disponibles:
+       
        Servir comandes: Processa les comandes dels clients, retirant els productes sol·licitats i actualitzant les vendes amb la funció servir_encarrec().
        Mostrar catàleg de productes per vendes: Mostra els productes ordenats per la quantitat de vendes amb la funció mostrar_cataleg_per_ventes().
+
 3. **Cuina:** Centre operatiu on es planifiquen i preparen els encàrrecs, optimitzant la recollida i el lliurament.
 
 Participants: 

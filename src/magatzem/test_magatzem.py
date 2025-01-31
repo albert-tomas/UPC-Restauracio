@@ -62,7 +62,7 @@ while operacio != 0:
         zona_magatzem = determinar_zona_magatzem(id_producte, productes_actualitzats)
         [estanteria_index, nivell_index, safata_index, producte_index] = buscar_producte(despensa, camera, id_producte, productes_actualitzats)
         print(f"El producte amb id {id_producte} el pots trobar a la {zona_magatzem}, "
-      f"a la prestatgeria {estanteria_index}, nivell {nivell_index}, safata {safata_index}.")
+    f"a la prestatgeria {estanteria_index}, nivell {nivell_index}, safata {safata_index}.")
     if operacio == 7:
         zona_magatzem = input("En quina zona està el producte (despensa o camera)? ")
         prestatge_index = int(input("A quin prestatge està la safata? "))

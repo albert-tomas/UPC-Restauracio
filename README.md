@@ -33,3 +33,4 @@ Xavi Moreno xavier.moreno.rubio@estudiantat.upc.edu
 Carlota Griñó carlota.grino@estudiantat.upc.edu
 Aina Aguilera aina.aguilera@estudiantat.upc.edu
 Helena Fito Rosillo helena.fito@estudiantat.upc.edu
+Albert

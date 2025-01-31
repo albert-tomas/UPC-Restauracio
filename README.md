@@ -8,10 +8,21 @@ Aquest projecte té com a objectiu desenvolupar un sistema de restauració innov
 El sistema es compon de tres seccions principals interconnectades:
 
 1. **Magatzem:** Espai automatitzat amb prestatgeries robotitzades per gestionar eficientment productes refrigerats i no refrigerats.
+   Les funcions disponibles es troben agrupades en un menú a test_magatzem.py
+   Funcions disponibles: 
+       inicialitzar_magatzem(): Inicialitza la matriu 3D que representa el magatzem amb el nombre de safates, nivells i estanteries especificats.
+       coloca_producte(): Afegeix un producte al magatzem per categoria i quantitat.
+       buscar_producte(): Cerca la ubicació d'un producte al magatzem segons la seva ID.
+       retirar_producte(): Retira un producte del magatzem per la seva ID.
+       obtenir_productes_safata(): Retorna la llista de productes d'una safata específica.
+        
 2. **Quiosc interactiu:** Eina digital per a la personalització d'encàrrecs, consulta de productes i gestió d’informació de manera accessible.
-3. **Cuina:** Centre operatiu on es planifiquen i preparen els encàrrecs, optimitzant la recollida i el lliurament.
+    Funcions disponibles:
+       
+       Servir comandes: Processa les comandes dels clients, retirant els productes sol·licitats i actualitzant les vendes amb la funció servir_encarrec().
+       Mostrar catàleg de productes per vendes: Mostra els productes ordenats per la quantitat de vendes amb la funció mostrar_cataleg_per_ventes().
 
-Aquest projecte integra tecnologia avançada i eines digitals per millorar l'experiència dels usuaris, fomentar la sostenibilitat i garantir un servei eficient. El sistema permet consultar dades com disponibilitat, preus i categories de productes, alhora que agilitza la gestió de recursos i encàrrecs dins del campus.
+3. **Cuina:** Centre operatiu on es planifiquen i preparen els encàrrecs, optimitzant la recollida i el lliurament.
 
 Participants: 
 Xavi Moreno xavier.moreno.rubio@estudiantat.upc.edu

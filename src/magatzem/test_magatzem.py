@@ -2,8 +2,8 @@ from pprint import pprint
 from productes import productes
 from categories import *
 
-from magatzem import  *
-from src.magatzem.productes import afegir_producte_a_base_de_dades
+from magatzem import  coloca_producte, inicialitzar_magatzem, retirar_producte
+from productes import afegir_producte_a_base_de_dades
 
 print("Per inicialitzar el magatzem introdueix les seguents dades: ")
 num_prestatges_despensa = int(input("Introdueix el nombre de prestatges de la despensa: "))

@@ -85,22 +85,21 @@ def registrar_usuari(usuari, any, telefon):
   perfil={"Nom usuari":{usuari}, "Any neixament": {any}, "Contacte": {telefon} }
   return perfil
 
-#Proves
+
+
+
+#PROVES
 
 #productes=ordena_productes(productes)
 #cataleg(productes)
 
-
 #llista_categories=categories_disponibles(productes)
 #print(llista_categories)
-
 
 #laCategoria = categoria_un_producte(productes,"xocolata")
 #print(laCategoria)
 
-
 #producte_categoria(productes,"beguda")
-
 
 #perfil=registrar_usuari("Xavi", 2005, 123456789)
 #print(perfil)

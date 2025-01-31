@@ -22,11 +22,13 @@ El sistema es compon de tres seccions principals interconnectades:
        encàrrec(): Amb el nom d'usuari, afegeix la seva comanda a la llista de comandes dels usuaris per ser portada a la cuina.
        ordenador_productes(): Ordena el llistat de productes disponibles en ordre creixent de preu.
        cataleg(): Escriu una llista amb el nom, el preu i la quantitat de productes disponibles perquè els clients puguin escollir què volen.
-       categories_disponibles: Retorna una llista amb totes les categories de productes disponibles.
+       categories_disponibles(): Retorna una llista amb totes les categories de productes disponibles.
        categoria_un_producte(): Permet consultar a quina categoria pertany qualsevol producte del catàleg.
        producte_categoria(): Retorna una llista amb tots els productes que pertanyen a la categoria demanada.
 
 3. **Cuina:** Centre operatiu on es planifiquen i preparen els encàrrecs, optimitzant la recollida i el lliurament.
+       servir_encàrrec(): Amb informació dels productes en despensa i càmera, segons els productes de les comandes, la funció els busca i els retira de les posicions en què es troben i retorna les comandes eliminant la comanda ja realitzada.
+       mostrar_cataleg_per_ventes(): Mostra el catàleg ordenat segons les ventes de cada producte.
 
 Participants: 
 Xavi Moreno xavier.moreno.rubio@estudiantat.upc.edu

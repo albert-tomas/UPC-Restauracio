@@ -20,7 +20,8 @@ comanda = [{"comanda" : "coca-cola",
 def encarrec(usuaris, nomUsuari, laComanda):
   for u in usuaris:
     if u["nom"] == nomUsuari:
-      u['comandes'].append(laComanda)
+      for element in comanda:
+        u['comandes'].append(element)
 
 encarrec(usuaris,"carlota", comanda)
 print(usuaris)

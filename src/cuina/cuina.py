@@ -1,6 +1,6 @@
 #Funcions necessaries
 #Planificar encarrec, la funció necesita retornar les posicions al magatzem de tots els productes de l'encarrec
-#Servir encarrec crita a la funció de retirar producte del magatzem
+#Servir encarrec crida a la funció de retirar producte del magatzem
 #Consulta productes populars: necesita del parametre vendes de la clase producte
 #Afegir nou encarrec a la cua
 from ipaddress import collapse_addresses
@@ -74,7 +74,7 @@ comandes = [
 ]
 
 posicio = buscar_producte(despensa,camera,"cc-zero")
-#print ( posicio)
+#print (posicio)
 def servir_encarrec(comandes, despensa, camera):
     primera_comanda = comandes[0]
     llista_primer_comanda = primera_comanda["comandes"]

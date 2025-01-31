@@ -85,7 +85,7 @@ def producte_categoria(productes, category):
       if not(producte_trobat):
           print("Ho sentim, no disposem d'aquesta categoria")
 
-#Registre d'usuari a la base de dades
+#Registre d'usuari
 #crea un nou perfil ajuntant les teves dades en un diccionari
 def registrar_usuari(usuari, any, telefon):
   print('Usuari registrat amb éxit')

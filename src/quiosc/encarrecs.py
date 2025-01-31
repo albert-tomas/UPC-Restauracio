@@ -14,9 +14,6 @@ usuaris = [
 
 #entrem ja uns usuaris manualment, amb unes comandes inicials
 
-def encarrec(usuaris, nomUsuari, laComanda):
-  usuari = "carlota"
-  usuari.append(laComanda)
 
 #definim una funció encarrec amb les variables del vector usaris per anar afegint els nous encàrrecs, 
 #l'usuari que fa l'encarrec i la comanda amb les quantitas que vol

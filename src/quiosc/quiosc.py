@@ -1,4 +1,4 @@
-#Fucnions necessaries
+#Funcions necessaries
 #EXEMPLE
 productes= [
                 { "quantitat": "12",
@@ -74,6 +74,7 @@ def categories_disponibles(productes):
            llista_categories.append(element["categoria"])
     return llista_categories
 
+#Menu principal del quiosc
 print("Bon dia! Benvingut/da al Quiosc de la UPC!")
 while True:
     option=input("Què vols fer? \n (A) Accedir al catàleg \n (B) Consultar les categories \n (C) Consultar productes d'una categoria \n (D) Sortir \n -->")

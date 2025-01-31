@@ -1,5 +1,4 @@
-#Funcions necessaries
-#EXEMPLE
+#QUIOSC v3.0
 #definim una llista de productes de exemple per aplicar les funcions
 productes= [
                 { "quantitat": "12",
